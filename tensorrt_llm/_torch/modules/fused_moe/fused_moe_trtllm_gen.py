@@ -382,8 +382,8 @@ class TRTLLMGenFusedMoE(MoE):
             # Apply pre_quant_scale if it exists (for NVFP4_AWQ)
             # fc31_act_scale shape: (1, hidden_size)
             # x shape: (num_tokens, hidden_size)
-            if hasattr(self, 'fc31_act_scale'
-                        ) and self.fc31_act_scale is not None:
+            if hasattr(self,
+                       'fc31_act_scale') and self.fc31_act_scale is not None:
                 x = x * self.fc31_act_scale
             x, x_sf, x_row, x_col = self._quantize_for_post_quant_comm(x)
 
@@ -556,8 +556,9 @@ class TRTLLMGenFusedMoE(MoE):
                 # Apply pre_quant_scale if it exists (for NVFP4_AWQ)
                 # fc31_act_scale shape: (1, hidden_size)
                 # x shape: (num_tokens, hidden_size)
-                if hasattr(self, 'fc31_act_scale'
-                            ) and self.fc31_act_scale is not None:
+                if hasattr(
+                        self,
+                        'fc31_act_scale') and self.fc31_act_scale is not None:
                     x = x * self.fc31_act_scale
 
                 hidden_states_fp4, hidden_states_scale_linear_fp4 = (
